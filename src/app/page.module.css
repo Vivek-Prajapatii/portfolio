@@ -1,11 +1,20 @@
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+  --gray-rgb: 255, 255, 255;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
+  --button-primary-hover: #ccc;
+  --button-secondary-hover: #1a1a1a;
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    grid-row-start: 2;
+    color: #e0e6f0;
+  }
 
+  background: #181a20;
+  color: #e0e6f0;
   display: grid;
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
@@ -16,14 +25,14 @@
   font-family: var(--font-geist-sans);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+    --gray-rgb: 0, 0, 0;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
+    --button-primary-hover: #383838;
+    --button-secondary-hover: #f2f2f2;
   }
 }
 
@@ -32,6 +41,7 @@
   flex-direction: column;
   gap: 32px;
   grid-row-start: 2;
+  color: #e0e6f0;
 }
 
 .main ol {
@@ -67,10 +77,7 @@
   height: 48px;
   padding: 0 20px;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -85,7 +92,6 @@ a.primary {
   color: var(--background);
   gap: 8px;
 }
-
 a.secondary {
   border-color: var(--gray-alpha-200);
   min-width: 158px;

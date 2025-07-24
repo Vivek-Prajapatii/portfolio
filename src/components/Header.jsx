@@ -18,13 +18,13 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/experience", label: "Experience" },
-    { href: "/projects", label: "Projects" },
-    { href: "/skills", label: "Skills" },
-    { href: "/achievements", label: "Achievements" },
-    { href: "/contact", label: "Contact" },
+    { href: "#hero", label: "Home" },
+    { href: "#about", label: "About" },
+    // { href: "#experience", label: "Experience" },
+    // { href: "#achievements", label: "Achievements" },
+    // { href: "#projects", label: "Projects" },
+    { href: "#skills", label: "Skills" },
+    { href: "#contact", label: "Contact" },
   ];
 
   const toggleMobileMenu = () => {
@@ -35,28 +35,50 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  // SPA section highlight on scroll
+  const [activeSection, setActiveSection] = useState("#hero");
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionIds = navItems.map((item) => item.href);
+      let current = sectionIds[0];
+      for (const id of sectionIds) {
+        const el = document.querySelector(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 120) {
+            current = id;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
       <nav className={styles.navbar}>
         <div className={styles.container}>
           {/* Logo/Brand */}
-          <Link href="/" className={styles.brand} onClick={closeMobileMenu}>
+          <a href="#hero" className={styles.brand} onClick={closeMobileMenu}>
             <span className={styles.brandName}>Vivek Prajapati</span>
             <span className={styles.brandTitle}>Frontend Developer</span>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <ul className={styles.navList}>
             {navItems.map((item) => (
               <li key={item.href} className={styles.navItem}>
-                <Link
+                <a
                   href={item.href}
                   className={`${styles.navLink} ${
-                    pathname === item.href ? styles.active : ""
+                    activeSection === item.href ? styles.active : ""
                   }`}
+                  onClick={closeMobileMenu}
                 >
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

@@ -1,13 +1,31 @@
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
+
+import AboutMe from "@/components/AboutMe";
+import Contact from "../components/Contact";
+import Skills from "../components/Skills";
+
 
 export default function HomePage() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Footer />
-    </>
+    <main
+      style={{
+        scrollSnapType: "y mandatory",
+        overflowY: "auto",
+        height: "100vh",
+      }}
+    >
+      <section style={{ scrollSnapAlign: "start" }} id="hero">
+      </section>
+      <section style={{ scrollSnapAlign: "start" }} id="about">
+        <AboutMe />
+      </section>
+      <section style={{ scrollSnapAlign: "start" }} id="skills">
+        <Skills />
+      </section>
+
+      
+      <section style={{ scrollSnapAlign: "start" }} id="contact">
+        <Contact />
+      </section>
+    </main>
   );
 }
