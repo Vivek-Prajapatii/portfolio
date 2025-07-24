@@ -10,7 +10,6 @@ export default function HomePage() {
       style={{
         scrollSnapType: "y mandatory",
         overflowY: "auto",
-        height: "100vh",
       }}
     >
       <section style={{ scrollSnapAlign: "start" }} id="hero">
@@ -21,8 +20,6 @@ export default function HomePage() {
       <section style={{ scrollSnapAlign: "start" }} id="skills">
         <Skills />
       </section>
-
-      
       <section style={{ scrollSnapAlign: "start" }} id="contact">
         <Contact />
       </section>
