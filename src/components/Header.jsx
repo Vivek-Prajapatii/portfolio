@@ -61,10 +61,10 @@ export default function Header() {
       <nav className={styles.navbar}>
         <div className={styles.container}>
           {/* Logo/Brand */}
-          <a href="#hero" className={styles.brand} onClick={closeMobileMenu}>
+          {/* <a href="#hero" className={styles.brand} onClick={closeMobileMenu}>
             <span className={styles.brandName}>Vivek Prajapati</span>
             <span className={styles.brandTitle}>Frontend Developer</span>
-          </a>
+          </a> */}
 
           {/* Desktop Navigation */}
           <ul className={styles.navList}>

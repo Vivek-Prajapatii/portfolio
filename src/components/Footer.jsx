@@ -1,20 +1,40 @@
+import styles from "../styles/Footer.module.scss";
+import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa";
+
 export default function Footer() {
   return (
-    <footer
-      style={{
-        textAlign: "center",
-        padding: "2rem 0",
-        color: "#7f5af0",
-        fontWeight: 600,
-        fontSize: "1.1rem",
-        background: "rgba(255,255,255,0.5)",
-        boxShadow: "0 2px 8px rgba(127,90,240,0.08)",
-        marginTop: "3rem",
-        borderRadius: "18px",
-        backdropFilter: "blur(8px)",
-      }}
-    >
-      © {new Date().getFullYear()} Vivek Prajapati &mdash; Frontend Developer
+    <footer className={styles.footer}>
+      <div className={styles.content}>
+        <div className={styles.copyright}>
+          <span>© {new Date().getFullYear()} Built with</span>
+          <span className={styles.heart}>
+            <FaHeart />
+          </span>
+          <span>by Vivek Prajapati</span>
+        </div>
+        <div className={styles.links}>
+          <a
+            href="https://github.com/Vivek-Prajapatii"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className={styles.icon} />
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/your-linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className={styles.icon} />
+            LinkedIn
+          </a>
+          <a href="mailto:your.email@example.com">
+            <FaEnvelope className={styles.icon} />
+            Contact
+          </a>
+        </div>
+      </div>
     </footer>
   );
 }

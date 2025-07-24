@@ -1,0 +1,19 @@
+.main {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #23273a 60%, #7aa2ff 100%);
+  box-shadow: 0 8px 32px 0 rgba(122, 162, 255, 0.18);
+  backdrop-filter: blur(32px);
+  border: 1.5px solid rgba(122, 162, 255, 0.18);
+  padding: 2rem 0;
+}
+
+.section {
+  scroll-snap-align: start;
+  margin: 2rem auto;
+  max-width: 800px;
+
+  box-shadow: 0 12px 48px rgba(15, 195, 255, 0.12);
+  backdrop-filter: blur(8px);
+}

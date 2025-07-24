@@ -1,18 +1,22 @@
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1200px;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: linear-gradient(135deg, rgba(16, 18, 27, 0.95) 0%, rgba(23, 25, 35, 0.95) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 195, 255, 0.15);
+  border-radius: 16px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.75rem;
 
   &.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
-    border-bottom-color: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(16, 18, 27, 0.98) 0%, rgba(23, 25, 35, 0.98) 100%);
+    box-shadow: 0 8px 32px rgba(15, 195, 255, 0.12);
+    backdrop-filter: blur(20px);
   }
 }
 
@@ -21,17 +25,16 @@
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 60px;
 
   @media (max-width: 768px) {
     padding: 0 1rem;
-    height: 70px;
+    height: 50px;
   }
 }
 
@@ -39,32 +42,34 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: #222;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
 
   &:hover {
-    transform: translateY(-1px);
+    background: rgba(15, 195, 255, 0.1);
   }
 }
 
 .brandName {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 600;
   line-height: 1.2;
-  background: linear-gradient(135deg, #3577ef, #6366f1);
+  background: linear-gradient(135deg, #0fc3ff 0%, #7aa2ff 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
 
   @media (max-width: 768px) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
 .brandTitle {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  color: #666;
+  color: rgba(224, 230, 240, 0.8);
   letter-spacing: 1px;
   text-transform: uppercase;
 
@@ -76,7 +81,7 @@
 .navList {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
 
@@ -91,13 +96,26 @@
 
 .navLink {
   position: relative;
-  color: #333;
+  color: rgba(224, 230, 240, 0.9);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  padding: 0.5rem 0;
-  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   letter-spacing: 0.2px;
+  
+  &:hover {
+    color: #0fc3ff;
+    background: rgba(15, 195, 255, 0.1);
+  }
+
+  &.active {
+    color: #0fc3ff;
+    background: rgba(15, 195, 255, 0.15);
+    box-shadow: 0 0 20px rgba(15, 195, 255, 0.1);
+    font-weight: 600;
+  }
 
   &:hover {
     color: #3577ef;
