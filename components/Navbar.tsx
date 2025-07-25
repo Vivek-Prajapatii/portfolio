@@ -20,6 +20,10 @@ const navLinks = [
         name: 'Skills',
         link: '#skills',
     },
+    {
+        name: 'Experience',
+        link: '#experience',
+    },
     // {
     //     name: 'Testimonials',
     //     link: '#testimonials',
@@ -101,9 +105,9 @@ function Navbar() {
                 <div className="mx-auto flex items-center justify-between">
                     <Link href="#home">
                         <header className="flex items-center gap-1">
-                            <span>{'< '}</span>
-                            <h1 className="text-2xl font-medium"> {'Vivek'}</h1>
-                            <span>{' />'}</span>
+                            {/* <span>{'< '}</span> */}
+                            <h1 className="text-2xl font-medium"> {'Namaste'}</h1>
+                            {/* <span>{' />'}</span> */}
                         </header>
                     </Link>
                     <nav className="text-muted gap-8 hidden items-center  lg:flex">
@@ -134,7 +138,8 @@ function Navbar() {
                             asChild
                         >
                             <Link
-                                href="/resume.pdf"
+                                href="https://drive.google.com/file/d/1qL5Pg7FxNtjStv4g5kJ9nh4Wgv4RnKcF/view"
+                                target="_blank"
                                 download
                                 className="flex items-center gap-2"
                             >
@@ -188,8 +193,9 @@ function Navbar() {
                                 asChild
                             >
                                 <Link
-                                    href="/resume.pdf"
+                                    href="https://drive.google.com/file/d/1qL5Pg7FxNtjStv4g5kJ9nh4Wgv4RnKcF/view"
                                     download
+                                    target="_blank"
                                     className="flex items-center justify-center gap-2"
                                 >
                                     Resume

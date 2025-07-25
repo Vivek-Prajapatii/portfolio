@@ -15,7 +15,7 @@ function HeroSection() {
         >
             <div className="text w-full lg:w-1/2">
                 <h1 className="text-2xl lg:text-3xl">
-                    Hi I{"'"}m <br />
+                    I{"'"}m <br />
                     <span className="text-6xl md:text-7xl lg:text-8xl font-semibold bg-clip-text text-transparent bg-gradient-to-br from-primary  to-accent">
                         Vivek Prajapati
                     </span>

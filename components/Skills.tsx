@@ -8,7 +8,7 @@ function SkillsSection() {
             className="lg:min-h-screen max-w-7xl mx-auto p-10  py-28"
         >
             <h2 className="text-primary text-5xl md:text-6xl font-semibold mb-20">
-                My Skills
+                Skills
             </h2>
             <div className="flex flex-col-reverse lg:flex-row w-full items-center">
                 <div className="w-full lg:w-1/2 items-center px-10">
