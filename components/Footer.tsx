@@ -2,31 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { GitHub, Instagram, Mail, Twitter } from 'react-feather'
-import { Linkedin } from 'lucide-react'
-
-const socialLinks = [
-    {
-        name: 'GitHub',
-        href: 'https://github.com/Vivek-Prajapatii',
-        icon: GitHub,
-    },
-    {
-        name: 'LinkedIn',
-        href: 'https://linkedin.com/in/Vivek-Prajaaptii',
-        icon: Linkedin,
-    },
-    {
-        name: 'Twitter',
-        href: 'https://www.x.com/Vivek_Prajapat1',
-        icon: Twitter,
-    },
-    {
-        name: 'Email',
-        href: 'mailto:vivekprajapati.dev@gmail.com',
-        icon: Mail,
-    },
-]
+import { socialLinks } from '@/configs/socialLinks'
 
 const quickLinks = [
     { name: '$whoami?', href: '#whoami' },
@@ -45,7 +21,7 @@ function Footer() {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <Link href="#home" className="inline-block mb-4">
-                            <h2 className="text-2xl font-bold">Namaste</h2>
+                            <h2 className="text-2xl font-bold">Thank you for visiting here!</h2>
                         </Link>
                         <p className="text-muted-foreground mb-6 max-w-md">
                             MERN Stack Developer passionate about creating amazing web experiences. 
@@ -90,10 +66,10 @@ function Footer() {
                         <div className="space-y-2 text-muted-foreground">
                             <p>
                                 <Link
-                                    href="mailto:vivekprajapati.dev@gmail.com"
+                                    href={socialLinks.find(link => link.name === 'Email')?.href || 'mailto:vivekprajapati.dev@gmail.com'}
                                     className="hover:text-foreground transition-colors"
                                 >
-                                    vivekprajapati.dev@gmail.com
+                                    {socialLinks.find(link => link.name === 'Email')?.id}
                                 </Link>
                             </p>
                             <p>Open to new opportunities</p>

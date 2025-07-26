@@ -37,6 +37,7 @@ const navLinks = [
 function Navbar() {
     const { scrollY } = useScroll()
     const [activeSection, setActiveSection] = useState('')
+    const [isScrolled, setIsScrolled] = useState(false)
     const navRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -45,6 +46,9 @@ function Navbar() {
                 document.querySelector(link)
             ) as (HTMLElement | null)[]
             const scrollPosition = window.scrollY + 100
+
+            // Update isScrolled state based on scroll position (matches the blur effect threshold)
+            setIsScrolled(window.scrollY > 200)
 
             sections.forEach((section, index) => {
                 if (section) {
@@ -129,7 +133,9 @@ function Navbar() {
                     <Link href="#home">
                         <header className="flex items-center gap-1">
                             {/* <span>{'< '}</span> */}
-                            <h1 className="text-2xl font-medium"> {'Namaste'}</h1>
+                            <h1 className="text-2xl font-medium">
+                                {isScrolled ? '<Vivek />' : '<Namaste />'}
+                            </h1>
                             {/* <span>{' />'}</span> */}
                         </header>
                     </Link>

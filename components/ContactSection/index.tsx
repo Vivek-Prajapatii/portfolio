@@ -3,8 +3,7 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
-import { GitHub, Instagram, Mail, Twitter } from 'react-feather'
-import { Linkedin } from 'lucide-react'
+import { socialLinks } from '@/configs/socialLinks'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '../ui/textarea'
 import { useForm } from 'react-hook-form'
@@ -43,45 +42,27 @@ function ContactSection() {
             </h2>
             <div className="w-full grid grid-cols-1  lg:grid-cols-2 gap-10">
                 <div className="contacts w-full flex-col flex gap-5">
-                    <Link
-                        target="_blank"
-                        referrerPolicy="no-referrer"
-                        href={'https://github.com/Vivek-Prajapatii'}
-                        className="flex items-center w-full justify-left text-xl lg:text-2xl gap-5 font-bold px-10 py-5 bg-accent/10 rounded-xl"
-                    >
-                        <GitHub height={35} width={35} />
-                        <p>Github</p>
-                    </Link>
-                    <Link
-                        target="_blank"
-                        referrerPolicy="no-referrer"
-                        href={'https://linkedin.com/in/Vivek-Prajaaptii'}
-                        className="flex items-center w-full justify-left text-xl lg:text-2xl gap-5 font-bold px-10 py-5 bg-accent/10 rounded-xl"
-                    >
-                        <Linkedin height={35} width={35} />
-                        <p>LinkedIn</p>
-                    </Link>
-                    <Link
-                        target="_blank"
-                        referrerPolicy="no-referrer"
-                        href={'https://www.x.com/Vivek_Prajapat1'}
-                        className="flex items-center w-full justify-left text-xl lg:text-2xl gap-5 font-bold px-10 py-5 bg-accent/10 rounded-xl"
-                    >
-                        <Twitter height={35} width={35} />
-                        <p>Twitter</p>
-                    </Link>
-                    <Link
-                        target="_blank"
-                        referrerPolicy="no-referrer"
-                        href={'mailto:vivekprajapati.dev@gmail.com'}
-                        className="flex items-center w-full justify-left text-sm lg:text-2xl gap-5 font-bold px-10 py-5 bg-accent/10 rounded-xl"
-                    >
-                        <Mail height={35} width={35} className="flex-shrink-0" />
-                        <p className="truncate">
-                            <span className="hidden sm:inline">vivekprajapati.dev@gmail.com</span>
-                            <span className="sm:hidden">vivekprajapati.dev...</span>
-                        </p>
-                    </Link>
+                    {socialLinks.map(({ name, href, icon: Icon, id }) => {
+                        const isEmail = name === 'Email'
+                        return (
+                            <Link
+                                key={name}
+                                target="_blank"
+                                referrerPolicy="no-referrer"
+                                href={href}
+                                className={`flex items-center w-full justify-left ${isEmail ? 'text-sm lg:text-2xl' : 'text-xl lg:text-2xl'} gap-5 font-bold px-10 py-5 bg-accent/10 rounded-xl`}
+                            >
+                                <Icon height={35} width={35} className={isEmail ? "flex-shrink-0" : ""} />
+                                {isEmail ? (
+                                    <p className="truncate">
+                                        <span className="sm:inline">{id}</span>
+                                    </p>
+                                ) : (
+                                    <p>{name}</p>
+                                )}
+                            </Link>
+                        )
+                    })}
                 </div>
                 <form
                     onSubmit={handleSubmit(handleFormSubmit)}

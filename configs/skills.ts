@@ -51,7 +51,7 @@ const skills = [
         color: '#e0234e',
     },
     {
-        name: 'Redux Toolkit',
+        name: 'RTK',
         icon: SiRedux,
         color: '#764abc',
     },
@@ -66,12 +66,12 @@ const skills = [
         color: '#cc6699',
     },
     {
-        name: 'Material UI',
+        name: 'MUI',
         icon: SiMui,
         color: '#007fff',
     },
     {
-        name: 'Ant Design',
+        name: 'Ant-D',
         icon: SiAntdesign,
         color: '#0170fe',
     },
@@ -81,7 +81,7 @@ const skills = [
         color: '#C21325',
     },
     {
-        name: 'Testing Library',
+        name: 'RTL',
         icon: SiTestinglibrary,
         color: '#E33332',
     },
