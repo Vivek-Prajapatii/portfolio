@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, useMotionValue, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from './ui/button'
@@ -37,6 +37,7 @@ const navLinks = [
 function Navbar() {
     const { scrollY } = useScroll()
     const [activeSection, setActiveSection] = useState('')
+    const navRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -91,8 +92,30 @@ function Navbar() {
         }
     }
 
+    function closeNav() {
+        height.set('0')
+        opacity.set('0')
+    }
+
+    // Handle click outside to close mobile nav
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (navRef.current && !navRef.current.contains(event.target as Node)) {
+                if (height.get() === '1000px') {
+                    closeNav()
+                }
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [])
+
     return (
         <motion.div
+            ref={navRef}
             className="max-w-[1250px] bg-[var(--nav)]/80 backdrop-blur-md shadow-sm mx-auto fixed z-50 left-0 right-0 transition-all"
             style={{
                 borderRadius: borderRadius,
@@ -171,6 +194,7 @@ function Navbar() {
                                     <Link
                                         key={index}
                                         href={link}
+                                        onClick={closeNav}
                                         className={`text-xl relative group ${
                                             activeSection === link
                                                 ? 'text-foreground'

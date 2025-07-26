@@ -76,8 +76,11 @@ function ContactSection() {
                         href={'mailto:vivekprajapati.dev@gmail.com'}
                         className="flex items-center w-full justify-left text-sm lg:text-2xl gap-5 font-bold px-10 py-5 bg-accent/10 rounded-xl"
                     >
-                        <Mail height={35} width={35} />
-                        <p>vivekprajapati.dev@gmail.com</p>
+                        <Mail height={35} width={35} className="flex-shrink-0" />
+                        <p className="truncate">
+                            <span className="hidden sm:inline">vivekprajapati.dev@gmail.com</span>
+                            <span className="sm:hidden">vivekprajapati.dev...</span>
+                        </p>
                     </Link>
                 </div>
                 <form

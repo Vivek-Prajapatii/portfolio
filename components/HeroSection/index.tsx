@@ -82,7 +82,7 @@ function HeroSection() {
             </div>
             {/* <div className="image w-full lg:w-1/2 relative aspect-square -mt-10 ">
                 <Image
-                    src="/chirag.webp"
+                    src="/vivek.webp"
                     className="w-full aspect-square"
                     alt=""
                     fill={true}

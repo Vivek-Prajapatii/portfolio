@@ -8,7 +8,7 @@ const ExperienceSection = () => {
             id="experience"
             className="py-20 px-4 md:px-8 max-w-7xl mx-auto"
         >
-            <h2 className="text-primary md:text-6xl text-5xl font-semibold mb-10 ml-5">
+            <h2 className="text-primary md:text-6xl text-5xl font-semibold mt-5 mb-10 ml-5">
                 Experience
             </h2>
             <div className="space-y-8">

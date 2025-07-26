@@ -1,18 +1,19 @@
 import './globals.css'
 import { Toaster } from '@/components/ui/toaster'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Chirag Bhalotia',
-    description: 'Chirag Bhalotia | Full Stack Web Developer',
+    title: 'Vivek Prajapati',
+    description: 'Vivek Prajapati | MERN Stack Developer',
     icons: '/favicon.png',
-    creator:"Chirag Bhalotia",
+    creator:"Vivek Prajapati",
     
     authors: [
         {
-            name: 'Chirag Bhalotia',
-            url: 'https://github.com/chirag3003',
+            name: 'Vivek Prajapati',
+            url: 'https://github.com/Vivek-Prajapatii',
         },
     ],
 }
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <body className={`text-text bg-background dark`}>
                 <Navbar />
                 {children}
+                <Footer />
                 <Toaster />
             </body>
         </html>
