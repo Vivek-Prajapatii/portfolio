@@ -115,7 +115,7 @@ function Navbar() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside)
         }
-    }, [])
+    }, [closeNav, height])
 
     return (
         <motion.div

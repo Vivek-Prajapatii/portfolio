@@ -25,7 +25,7 @@ function Footer() {
                         </Link>
                         <p className="text-muted-foreground mb-6 max-w-md">
                             MERN Stack Developer passionate about creating amazing web experiences. 
-                            Let's build something incredible together!
+                            Let&apos;s build something incredible together!
                         </p>
                         <div className="flex gap-4">
                             {socialLinks.map(({ name, href, icon: Icon }) => (
@@ -80,7 +80,7 @@ function Footer() {
                 {/* Bottom Section */}
                 <div className="border-t border-accent/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-muted-foreground text-sm">
-                        © {currentYear} Vivek Prajapati. All rights reserved.
+                        {currentYear} Vivek Prajapati. All rights reserved.
                     </p>
                     <p className="text-muted-foreground text-sm">
                         Built with Next.js & Tailwind CSS
