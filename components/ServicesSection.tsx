@@ -10,7 +10,7 @@ function ServicesSection() {
         <section id="services" className="bg-accent/5">
             <div className="max-w-7xl mx-auto p-10 ">
                 <h2 className="text-primary text-5xl md:text-6xl font-semibold mb-20">
-                    My Services
+                    Projects
                 </h2>
                 <div className="services grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
@@ -33,10 +33,11 @@ function ServicesSection() {
                             className="w-full h-full"
                         >
                             <Card className="h-full">
+                                <a href={service.url} target="_blank" rel="noreferrer">
                                 <img
                                     src={service.img}
                                     alt=""
-                                    className="w-auto m-8 mx-20 aspect-square"
+                                    className="w-70 aspect-square mx-auto  rounded-lg"
                                 />
                                 <CardHeader>
                                     <CardTitle>{service.title}</CardTitle>
@@ -44,6 +45,7 @@ function ServicesSection() {
                                         {service.description}
                                     </CardDescription>
                                 </CardHeader>
+                                </a>
                             </Card>
                         </motion.div>
                     ))}

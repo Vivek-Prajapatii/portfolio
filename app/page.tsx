@@ -9,8 +9,9 @@ export default function Home() {
     return (
         <main className="min-h-[300vh] bg-background">
             <HeroSection />
-            {/* <ServicesSection /> */}
             <SkillsSection />
+            <ServicesSection />
+
             <ExperienceSection />
             {/* <TestimonialsSection /> */}
             <ContactSection />
