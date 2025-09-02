@@ -14,13 +14,13 @@ function ProjectButton() {
                 buttonVariants({ size: 'lg' }),
                 'font-bold text-xl md:w-auto w-full'
             )}
-            href={""}
-            onClick={() => {
-               toast({
-                   title: 'Projects page coming soon!',
-                   description: 'Till then you can take a look at my github',
-               })
-            }}
+            href={"/#projects"}
+            // onClick={() => {
+            //    toast({
+            //        title: 'Projects page coming soon!',
+            //        description: 'Till then you can take a look at my github',
+            //    })
+            // }}
         >
             My Projects
         </Link>
