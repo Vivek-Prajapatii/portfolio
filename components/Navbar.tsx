@@ -227,7 +227,7 @@ function Navbar() {
                                 asChild
                             >
                                 <Link
-                                    href="https://drive.google.com/file/d/1qL5Pg7FxNtjStv4g5kJ9nh4Wgv4RnKcF/view"
+                                    href="https://drive.google.com/file/d/1xKd5OoSvwi9FbiCU_4vi1UmFyExy5nI7/view"
                                     download
                                     target="_blank"
                                     className="flex items-center justify-center gap-2"
